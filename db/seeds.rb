@@ -13,17 +13,17 @@ Auction.destroy_all
 print "Seeding"
 
 15.times do 
-    User.create(name: Faker::Name.name, password_digest: 123, username: Faker::Internet.username)
+    User.create!(name: Faker::Name.name, password_digest: 123, username: Faker::Internet.username)
 end
 
 10.times do
-    Item.create(user: User.all.sample, category: Faker::Appliance.equipment)
+    Item.create!(user: User.all.sample, category: Faker::Appliance.equipment)
 end
 
 10.times do
-    Auction.create(item: Item.all.sample, minimun_offer: rand(1..10))
+    Auction.create!(item: Item.all.sample )
 end
 
 10.times do
-    Bid.create(user: User.all.sample, offer: rand(0..10), auction: Auction.all.sample)
+    Bid.create!(user: User.all.sample, offer: rand(0..10), auction: Auction.all.sample)
 end
