@@ -8,7 +8,6 @@
 User.destroy_all
 Item.destroy_all
 Bid.destroy_all
-Auction.destroy_all
 
 print "Seeding"
 
@@ -16,14 +15,10 @@ print "Seeding"
     User.create!(name: Faker::Name.name, password_digest: 123, username: Faker::Internet.username)
 end
 
-10.times do
+30.times do
     Item.create!(user: User.all.sample, category: Faker::Appliance.equipment)
 end
 
-10.times do
-    Auction.create!(item: Item.all.sample )
-end
-
-10.times do
-    Bid.create!(user: User.all.sample, offer: rand(0..10), auction: Auction.all.sample)
+35.times do
+    Bid.create!(user: User.all.sample, item: Item.all.sample, offer: rand(0..10))
 end
