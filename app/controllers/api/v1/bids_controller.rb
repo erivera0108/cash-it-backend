@@ -10,8 +10,8 @@ class Api::V1::BidsController < ApplicationController
     end
     
     def destroy
-        item = Item.find(params[:id])
-        item.destroy
+        bid = Bid.find(params[:id])
+        bid.destroy
     end
 
     private
