@@ -8,6 +8,11 @@ class Api::V1::BidsController < ApplicationController
         bid = Bid.create!(bid_params(:item_id, :user_id, :offer))
         render json: bid
     end
+    
+    def destroy
+        item = Item.find(params[:id])
+        item.destroy
+    end
 
     private
     def bid_params(*args)
