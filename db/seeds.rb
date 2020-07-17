@@ -20,5 +20,5 @@ end
 end
 
 35.times do
-    Bid.create!(user: User.all.sample, item: Item.all.sample, offer: rand(0..10))
+    Bid.create!(user: User.all.sample, item: Item.all.sample, offer: rand(0..10), accepted: false)
 end
