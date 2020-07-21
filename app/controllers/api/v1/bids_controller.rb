@@ -21,7 +21,7 @@ class Api::V1::BidsController < ApplicationController
 
     def update
         bid = Bid.find(params[:id])
-        puts bid
+        
         bid.update(bid_params)
         render json: bid
     end
