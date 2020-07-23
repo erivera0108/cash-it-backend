@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
     def index
         users = User.all.with_attached_image
         render json: users.map { |user| 
-            mushroom.as_json.merge({image_url: user.image_url })
+            user.as_json.merge({image: user.image_url })
         }
     end
 
