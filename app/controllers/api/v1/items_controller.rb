@@ -1,13 +1,12 @@
 class Api::V1::ItemsController < ApplicationController
     def index
-        items = Item.all.with_attached_image
-        render json: items.map { |item| 
-            item.as_json.merge({image: item.image_url })
-        }
+        items = Item.all
+        render json: items
     end
 
     def show
         item = Item.find(params[:id])
+
         render json: item.as_json.merge({
             image: url_for(item.image)
         })
