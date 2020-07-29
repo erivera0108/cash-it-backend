@@ -53,6 +53,33 @@ switch.image.attach(
     content_type: 'application/png'
 )
 
+headphones = Item.create!(user: user2, category: 'HeadPhones')
+headphones.image.attach(
+    io: File.open('./public/images/items/Headphones.png'),
+    filename: 'Headphones.png',
+    content_type: 'application/png'
+)
+
+headset = Item.create!(user: user3, category: 'Headset')
+headset.image.attach(
+    io: File.open('./public/images/items/Headset.png'),
+    filename: 'Headset.png',
+    content_type: 'application/png'
+)
+
+hp = Item.create!(user: user3, category: 'HP')
+hp.image.attach(
+    io: File.open('./public/images/items/HP.png'),
+    filename: 'HP.png',
+    content_type: 'application/png'
+)
+iphone = Item.create!(user: user2, category: 'Iphone')
+iphone.image.attach(
+    io: File.open('./public/images/items/Iphone.png'),
+    filename: 'Iphone.png',
+    content_type: 'application/png'
+)
+
 35.times do
     Bid.create!(user: User.all.sample, item: Item.all.sample, offer: rand(0..10), accepted: false)
 end
