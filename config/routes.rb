@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, :bids, :items
     end
-
+    
+    post'rails/active_storage/direct_uploads', to: 'direct_uploads#create'
 
   end
 end

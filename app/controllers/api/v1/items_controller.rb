@@ -6,7 +6,6 @@ class Api::V1::ItemsController < ApplicationController
 
     def show
         item = Item.find(params[:id])
-
         render json: item.as_json.merge({
             image: url_for(item.image)
         })
