@@ -32,53 +32,25 @@ user3.image.attach(
     content_type: 'application/png'
 )
 
-laptop = Item.create!(user: user1, category: 'Laptop')
-laptop.image.attach(
-    io: File.open('./public/images/items/Laptop.png'),
-    filename: 'Laptop.png',
-    content_type: 'application/png'
-)
+laptop = Item.create!(user: user1, category: 'Laptop', image: 'https://i.dell.com/sites/csimages/Video_Imagery/all/xps_7590_touch.png')
 
-pc = Item.create!(user: user2, category: 'PC')
-pc.image.attach(
-    io: File.open('./public/images/items/PC.png'),
-    filename: 'PC.png',
-    content_type: 'application/png'
-)
 
-switch = Item.create!(user: user3, category: 'Switch')
-switch.image.attach(
-    io: File.open('./public/images/items/Switch.png'),
-    filename: 'Switch.png',
-    content_type: 'application/png'
-)
+pc = Item.create!(user: user2, category: 'PC', image: 'https://images-na.ssl-images-amazon.com/images/I/81YUHsnzj1L._AC_SY355_.jpg')
 
-headphones = Item.create!(user: user2, category: 'HeadPhones')
-headphones.image.attach(
-    io: File.open('./public/images/items/Headphones.png'),
-    filename: 'Headphones.png',
-    content_type: 'application/png'
-)
 
-headset = Item.create!(user: user3, category: 'Headset')
-headset.image.attach(
-    io: File.open('./public/images/items/Headset.png'),
-    filename: 'Headset.png',
-    content_type: 'application/png'
-)
+switch = Item.create!(user: user3, category: 'Switch', image: 'https://www.nintendo.com/content/dam/noa/en_US/hardware/switch/nintendo-switch-new-package/gallery/bundle_color_console%20(3).jpg')
 
-hp = Item.create!(user: user3, category: 'HP')
-hp.image.attach(
-    io: File.open('./public/images/items/HP.png'),
-    filename: 'HP.png',
-    content_type: 'application/png'
-)
-iphone = Item.create!(user: user2, category: 'Iphone')
-iphone.image.attach(
-    io: File.open('./public/images/items/Iphone.png'),
-    filename: 'Iphone.png',
-    content_type: 'application/png'
-)
+
+headphones = Item.create!(user: user2, category: 'HeadPhones', image: 'https://cnet1.cbsistatic.com/img/3LuDkui8AcAOIJ4X1mQ1kxlQbX0=/1200x675/2019/03/14/91ae7bfa-ccd8-4c7f-b451-76b1686c21f9/airpods-2-black.png')
+
+
+headset = Item.create!(user: user3, category: 'Headset', image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV8W2?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1559340831364')
+
+
+hp = Item.create!(user: user3, category: 'HP', image: 'https://prodimage.images-bn.com/pimages/9780545162074_p0_v2_s550x406.jpg')
+
+iphone = Item.create!(user: user2, category: 'Iphone', image: 'https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-11-Pro/Midnight-Green/Apple-iPhone-11-Pro-Midnight-Green-frontimage.jpg')
+
 
 35.times do
     Bid.create!(user: User.all.sample, item: Item.all.sample, offer: rand(0..10), accepted: false)
