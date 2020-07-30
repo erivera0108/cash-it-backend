@@ -11,14 +11,14 @@ Bid.destroy_all
 
 print "Seeding"
 
-user1 = User.create!(name: Faker::Name.name, password_digest: 123, username: Faker::Internet.username)
+user1 = User.create!(name: 'Edgar Rivera', password_digest: 123, username: 'Proto Lex')
 user1.image.attach(
     io: File.open('./public/images/users/user1.png'),
     filename: 'user1.png',
     content_type: 'application/png'
 )
 
-user2 = User.create!(name: Faker::Name.name, password_digest: 123, username: Faker::Internet.username)
+user2 = User.create!(name: 'Lei Brutus', password_digest: 123, username: 'Kiskeya')
 user2.image.attach(
     io: File.open('./public/images/users/user2.png'),
     filename: 'user2.png',
